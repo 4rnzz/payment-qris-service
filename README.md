@@ -71,8 +71,8 @@ Request body:
 {
   "amount": 1000,
   "name": "XEoms",
-  "email": "XEoms@gmail.com",
-  "message": "Test pembayaran"
+  "email": "usermail@gmail.com",
+  "message": "Hello Cuyys"
 }
 ```
 
@@ -80,13 +80,13 @@ Response success:
 
 ```json
 {
-  "transaction_id": "TRX-17773858347900969",
-  "order_id": "abc123xyz",
-  "payment_url": "https://sociabuzz.com/payment/x/abc123xyz",
+  "id": "TRX-17773949346355252",
+  "order_id": "25088a18-4322-11f1-bc0e-cee239a73494",
+  "payment_url": "https://sociabuzz.com/payment/x/25088a18-4322-11f1-bc0e-cee239a73494",
   "amount": 5000,
   "fee": 123,
   "total_amount": 5123,
-  "qris_string": "00020101021226670016COM.NOBUBANK.WWW0118936005030000087914021452038453033605802ID5920SOCIALBUZZ PAYMENT6007JAKARTA61051234562070703A016304ABCD",
+  "qris_string": "00020101021226670016COM.NOBUBANK.WWW...",
   "status": "pending",
   "created_at": "2026-04-28T10:00:00.000Z",
   "expired_at": "2026-04-28T10:15:00.000Z"
@@ -117,8 +117,8 @@ Response pending:
 
 ```json
 {
-  "id": "TRX-17773858347900969",
-  "order_id": "abc123xyz",
+  "id": "TRX-17773949346355252",
+  "order_id": "25088a18-4322-11f1-bc0e-cee239a73494",
   "amount": 5000,
   "fee": 123,
   "total_amount": 5123,
@@ -132,17 +132,32 @@ Response paid:
 
 ```json
 {
-  "id": "TRX-17773858347900969",
-  "order_id": "abc123xyz",
+  "id": "TRX-17773949346355252",
+  "order_id": "25088a18-4322-11f1-bc0e-cee239a73494",
   "amount": 5000,
   "fee": 123,
   "total_amount": 5123,
   "status": "paid",
   "created_at": "2026-04-28T10:00:00.000Z",
   "expired_at": "2026-04-28T10:15:00.000Z",
-  "supporter": "Zacky",
-  "message": "Test pembayaran",
+  "supporter": "XEoms",
+  "message": "Hello Cuyys",
   "paid_at": "2026-04-28T10:02:20.000Z"
+}
+```
+
+Response expired:
+
+```json
+{
+  "id": "TRX-17773949346355252",
+  "order_id": "25088a18-4322-11f1-bc0e-cee239a73494",
+  "status": "expired",
+  "amount": 5000,
+  "total_amount": 5123,
+  "fee": 57,
+  "created_at": "2026-04-28T16:48:54.635Z",
+  "expired_at": "2026-04-28T16:52:00.000Z"
 }
 ```
 
@@ -181,8 +196,8 @@ curl http://localhost:3000/status/TRX-17773858347900969
 [
   {
     "id": "TRX-17773858347900969",
-    "order_id": "abc123xyz",
-    "payment_url": "https://sociabuzz.com/payment/x/abc123xyz",
+    "order_id": "25088a18-4322-11f1-bc0e-cee239a73494",
+    "payment_url": "https://sociabuzz.com/payment/x/25088a18-4322-11f1-bc0e-cee239a73494",
     "qris_string": "00020101021226670016COM.NOBUBANK.WWW...",
     "amount": 5000,
     "fee": 123,
