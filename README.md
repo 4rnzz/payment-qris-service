@@ -19,7 +19,7 @@ REST API sederhana untuk membuat transaksi donasi Sociabuzz, mengambil QRIS stri
 ## Installation
 
 ```bash
-git clone https://github.com/username/repo-name.git
+git clone 4rnzz
 cd repo-name
 npm install
 ```
@@ -37,11 +37,11 @@ Edit config di file utama:
 ```js
 const config = {
     port: 3000,
-    username: 'xeoms',
+    username: 'username-sociabuzz',
     base_url: 'https://sociabuzz.com',
     webhook_token: 'your-webhook-token',
     min_nominal: 1000,
-    db_path: './transactions.json'
+    db_path: './database/transactions.json'
 };
 ```
 
@@ -69,9 +69,9 @@ Request body:
 
 ```json
 {
-  "amount": 5000,
-  "name": "Zacky",
-  "email": "zacky@gmail.com",
+  "amount": 1000,
+  "name": "XEoms",
+  "email": "XEoms@gmail.com",
   "message": "Test pembayaran"
 }
 ```
