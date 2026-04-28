@@ -19,7 +19,7 @@ REST API sederhana untuk membuat transaksi donasi Sociabuzz, mengambil QRIS stri
 ## Installation
 
 ```bash
-git clone 4rnzz
+git clone https://github.com/4rnzz/payment-qris-service.git
 cd repo-name
 npm install
 ```
