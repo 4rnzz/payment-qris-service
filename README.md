@@ -71,7 +71,6 @@ Request body:
 {
   "amount": 1000,
   "name": "XEoms",
-  "email": "usermail@gmail.com",
   "message": "Hello Cuyys"
 }
 ```
@@ -178,9 +177,8 @@ curl -X POST http://localhost:3000/create \
   -H "Content-Type: application/json" \
   -d '{
     "amount": 5000,
-    "name": "Zacky",
-    "email": "zacky@gmail.com",
-    "message": "Test pembayaran"
+    "name": "XEoms"
+    "message": "Hello Cuyys"
   }'
 ```
 
