@@ -1,4 +1,4 @@
-# Sociabuzz QRIS Payment
+## Sociabuzz QRIS Payment
 
 REST API sederhana untuk membuat transaksi donasi Sociabuzz, mengambil QRIS string, menyimpan transaksi, menerima webhook pembayaran, dan mengecek status transaksi.
 
