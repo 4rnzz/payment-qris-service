@@ -87,8 +87,8 @@ function updateTransactionPaid(id, body) {
     if (db[index].status === 'pending') {
         db[index].status = 'paid';
         db[index].paid_at = new Date().toISOString();
-        db[index].supporter = body.supporter || null;
-        db[index].message = body.message || null;
+        db[index].supporter = body.supporter || body.name || null;
+        db[index].message = body.message || body.note || null;
         writeDB(db);
         return { changes: 1 };
     }
@@ -96,11 +96,11 @@ function updateTransactionPaid(id, body) {
     return { changes: 0 };
 }
 
-function findPendingByAmount(totalAmount) {
+function findPendingByAmount(amount) {
     const db = expirePendingTransactions(readDB());
 
     const pending = db
-        .filter(t => t.status === 'pending' && t.total_amount === totalAmount && !isExpired(t.expired_at))
+        .filter(t => t.status === 'pending' && t.amount === amount && !isExpired(t.expired_at))
         .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
     return pending[0] || null;
